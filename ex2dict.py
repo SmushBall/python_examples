@@ -56,12 +56,30 @@ for key in sorted(Creator.iterkeys()): #iterkeys returns an iterator over the di
 # descending sort
 for key in sorted(Creator.iterkeys(), reverse=True):
     print "%s: %s " %(key, Creator[key])   
-      
+
 #sorting by value
 for key, value in sorted(Creator.iteritems(),
 	key = lambda(k,v):(v,k)):
     print "%s : %s" %(key,value)
+#the key param takes a func, which indicates how the data is going to be sorted.
 
+#Dictionary view objects vi, vv, vk
+
+vi = Creator.viewitems()
+vv = Creator.viewvalues()
+vk = Creator.viewkeys()
+
+for m,n in vi:
+	print m, n
+
+for n in vv:
+	print n
+
+for m in vk:
+	print m
+
+
+print "\n******** Adding two dictionary********\n"
 
 Laptops.update(Creator)#adding two dict
 print Laptops
